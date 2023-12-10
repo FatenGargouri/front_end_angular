@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ClientService } from '../client.service';
 import { Router } from '@angular/router';
+import { FactureService } from '../facture.service'; // Assurez-vous que le chemin est correct
+
 
 @Component({
   selector: 'app-client',
@@ -14,7 +16,11 @@ export class ClientComponent implements OnInit {
   newClient: { id: number; nom: string; email: string; adresse: string; tel: string; } = { id: 0, nom: '', email: '', adresse: '', tel: '' };
   
 
-  constructor(private dataService: ClientService ,private router: Router) { }
+  constructor(
+    private dataService: ClientService,
+    private factureService: FactureService, // Injectez le service FactureService
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.loadClientData();
@@ -29,7 +35,7 @@ export class ClientComponent implements OnInit {
           this.clientArray = data.map((client: { id: number, nom: string; email: string; adresse: string; tel: string  }) => ({
             id: client.id,
             nom: client.nom,
-            email: client.email || 'N/A',
+            email: client.email ,
             adresse: client.adresse,
             tel: client.tel,
           }));
@@ -48,8 +54,12 @@ export class ClientComponent implements OnInit {
       response => {
         console.log('Server response after save:', response);
         this.loadClientData();
-        // Navigate to the payment page
-      this.router.navigate(['/client/paiement']);
+        
+        // Enregistrez les données du client dans le service FactureService
+        this.factureService.setClientData(response);
+        
+        // Naviguez vers le composant suivant (paiement)
+        this.router.navigate(['/client/paiement']);
       },
       error => {
         console.error('Error saving data:', error);

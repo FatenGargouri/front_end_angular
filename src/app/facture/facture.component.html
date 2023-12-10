@@ -1,0 +1,31 @@
+<!-- facture.component.html -->
+
+<div #htmlData class="invoice">
+    <!-- facture.component.html -->
+
+<!-- ... (autres parties de votre facture) -->
+
+<div class="client-info">
+    <h4>Client Information</h4>
+    <p>Name: {{ getClientData()?.nom || 'N/A' }}</p>
+    <!-- Add more client information as needed -->
+  </div>
+  
+  <div class="reservation-info">
+    <h4>Reservation Information</h4>
+    <p>Start Date: {{ getReservationData()?.date_debut | date }}</p>
+    <p>End Date: {{ getReservationData()?.date_fin | date }}</p>
+  </div>
+  
+  <div class="payment-info">
+    <h4>Payment Information</h4>
+    <p>Card Type: {{ getPaymentData()?.type_carte || 'N/A' }}</p>
+    <p>Card Number: {{ getPaymentData()?.numero_carte || 'N/A' }}</p>
+    <!-- Add more payment information as needed -->
+  </div>
+  
+  <!-- ... (autres parties de votre facture) -->
+  
+  <button (click)="exportToPDF()">Export to PDF</button>
+  
+</div>

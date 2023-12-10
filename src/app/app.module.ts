@@ -11,6 +11,8 @@ import { PaiementComponent } from './paiement/paiement.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { AgenceComponent } from './agence/agence.component';
+import { FactureComponent } from './facture/facture.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AgenceComponent } from './agence/agence.component';
     PaiementComponent,
     ContactComponent,
     ReservationComponent,
-    AgenceComponent
+    AgenceComponent,
+    FactureComponent,
+   
   ],
   imports: [
     FormsModule,
