@@ -3,6 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+
+
+
 import { AppComponent } from './app.component';
 import { ClientComponent } from './client/client.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,6 +15,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { AgenceComponent } from './agence/agence.component';
 import { FactureComponent } from './facture/facture.component';
+import { landingComponent } from './landing/landing.component';
+import { VoitureComponent } from './voiture/voiture.component';
 
 
 @NgModule({
@@ -23,6 +28,9 @@ import { FactureComponent } from './facture/facture.component';
     ReservationComponent,
     AgenceComponent,
     FactureComponent,
+    landingComponent,
+    VoitureComponent,
+    
    
   ],
   imports: [
@@ -31,6 +39,8 @@ import { FactureComponent } from './facture/facture.component';
     HttpClientModule,
     RouterModule.forRoot([]),
     AppRoutingModule,
+    
+     // Add this line
   ],
   providers: [],
   bootstrap: [AppComponent]

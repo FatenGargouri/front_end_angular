@@ -10,8 +10,10 @@ import { FactureService } from '../facture.service';
 })
 export class FactureComponent implements OnInit {
   @ViewChild('htmlData') htmlData!: ElementRef;
-
-  constructor(private factureService: FactureService) { }
+  todayDate: number;
+  constructor(private factureService: FactureService) {
+    this.todayDate = Date.now();
+   }
 
   ngOnInit(): void {
   }

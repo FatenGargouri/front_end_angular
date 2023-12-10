@@ -9,6 +9,7 @@ export class FactureService {
   private reservationData: any;
   private clientData: any;
   private paymentData: any;
+  private voitureData: any;
 
   setReservationData(data: any) {
     this.reservationData = data;
@@ -33,4 +34,12 @@ export class FactureService {
   getPaymentData() {
     return this.paymentData;
   }
+
+  setVoitureData(data :any){
+    this.voitureData =data;
+  }
+  getVoitureData() {
+    return this.voitureData;
+  }
+
 }

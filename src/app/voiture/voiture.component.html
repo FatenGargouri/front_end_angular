@@ -1,0 +1,19 @@
+<!-- voiture.component.html -->
+
+<div class="container">
+    <h1>Voitures</h1>
+    <div class="d-flex flex-wrap">
+        <!-- Utilisation de la directive *ngFor pour itérer sur les voitures -->
+        <div *ngFor="let voiture of voitureArray" class="card mb-4" style="width: 20rem;">
+            <img [src]="voiture.imageUrl" class="card-img-top" alt="Image de la voiture">
+            <div class="card-body">
+                <h2 class="card-title">{{ voiture.modele }}</h2>
+                <h3 class="card-subtitle">{{ voiture.couleur }}</h3>
+                <p class="card-text">{{ voiture.date_fab }}</p>
+                <p class="card-text">{{voiture.prix_location}}</p>
+                <!-- Ajoutez d'autres détails de la voiture si nécessaire -->
+                <a href="/reservation" class="btn btn-primary">Réserver</a>
+            </div>
+        </div>
+    </div>
+</div>
