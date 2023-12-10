@@ -1,0 +1,18 @@
+<!-- reservation.component.html -->
+<div class="container">
+    <h1>Réservation</h1>
+    <hr>
+    <form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
+        <div class="form-group">
+            <label for="date_debut">Date de début</label>
+            <input type="datetime-local" class="form-control" id="date_debut" name="date_debut" [(ngModel)]="newReservation.date_debut" required>
+
+            <label for="date_fin">Date de fin</label>
+            <input type="datetime-local" class="form-control" id="date_fin" name="date_fin" [(ngModel)]="newReservation.date_fin" required>
+        </div>
+        <button id="submitButton" type="submit" class="btn btn-primary">Préserver</button>
+    </form>
+    <hr>
+</div>
+
+  

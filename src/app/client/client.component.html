@@ -1,0 +1,25 @@
+<!-- client.component.html -->
+<div class="container">
+  <h1>Remplir le formulaire</h1>
+  <hr>
+  <form (ngSubmit)="onSubmit()" #clientForm="ngForm">
+    <div class="form-group">
+      <label for="nom">Nom client</label>
+      <input type="text" class="form-control" id="nom" placeholder="Entrer votre nom" name="nom" [(ngModel)]="newClient.nom" required>
+      
+      <label for="email">Email </label>
+      <input type="text" class="form-control" id="email" placeholder="Entrer votre email"  name="email" [(ngModel)]="newClient.email" required>
+      
+      <label for="adresse">Adresse</label>
+      <input type="text" class="form-control" id="adresse" placeholder="Entrer votre adresse"  name="adresse" [(ngModel)]="newClient.adresse" required>
+      
+      <label for="tel">Tel</label>
+      <input type="text" class="form-control" id="tel" placeholder="Entrer votre téléphone"  name="tel" [(ngModel)]="newClient.tel" required>
+      
+      
+    </div>
+    
+    <button   id="submitButton" type="submit" class="btn btn-primary">Confirmer mes données</button>
+  </form>
+  <hr>
+</div>

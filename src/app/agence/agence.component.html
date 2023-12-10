@@ -1,0 +1,43 @@
+<!-- agence.component.html -->
+<div *ngIf="agence; else agenceNotFound" class="agence-container">
+    <div class="header">
+      <h2>{{ agence.nom }}</h2>
+    </div>
+    <div class="content">
+      <div class="details">
+        <p> {{ agence.description }}</p>
+        <p><strong>Adresse:</strong> {{ agence.couladresse }}</p>
+        <p><strong>Téléphone:</strong> {{ agence.tel }}</p>
+        <p><strong>Date de création:</strong> {{ agence.date_creation | date: 'dd/MM/yyyy' }}</p>
+        
+      </div>
+      <div class="image">
+        <img src="https://1693852854.rsc.cdn77.org/photos/car/167/location_peugeot_208_tunis.jpg" alt="Agence Photo">
+      </div>
+      <p>
+        Nos Valeurs : <br>
+La Proximité : <br>
+Il se passe une relation de confiance et de proximité avec nos clients. La Relation Client est au centre de notre démarche : «Tous nos collaborateurs et agents aiment leurs clients, ils les considèrent comme des partenaires ».<br>
+
+La Satisfaction client <br>
+Nous sommes à l’écoute de nos clients 24H/24 et nous sommes capable de mettre un véhicule en face de chaque besoin, de un à cent véhicules pour un client à une période déterminée. «Il y a un volant pour chaque client ».<br>
+
+L’Innovation <br>
+Nous nous démarquons de nos concurrents par nos idées novatrices, avec une forte volonté de réaliser des améliorations constantes et quotidiennement. Nous cherchons toujours à proposer des produits novateurs, ces dernières années nous avons lancé la location de voitures de luxe avec chauffeur, la location longue durée dédiée aux entreprises (LLD), le service des transferts et navettes aéroports, les cartes de fidélité « AutoCar » avec lesquelles les clients peuvent bénéficier des réductions très importantes.<br>
+
+L’esprit d’équipe <br>
+Notre activité a triplé de taille ces dernières années d’une façon rapide grâce à toute notre équipe impliquée. Nos équipes sont très attachées à la marque «MAMICAR» et se considèrent comme leur propre patron, chacun fait sa tâche avec le maximum de respect et de sérieux.<br>
+
+
+      </p>
+    </div>
+  </div>
+  
+  <ng-template #agenceNotFound>
+    <div class="not-found">
+      <h2>Agence non trouvée</h2>
+      <p>La page que vous recherchez n'existe pas.</p>
+      <!-- Vous pouvez ajouter un bouton pour rediriger l'utilisateur quelque part -->
+    </div>
+  </ng-template>
+  

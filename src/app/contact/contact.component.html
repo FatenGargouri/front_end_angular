@@ -1,0 +1,28 @@
+<!-- client.component.html -->
+<div class="container">
+    <h1>Contactez nous</h1>
+    <hr>
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <div class="form-group">
+        <label for="nom">Nom client</label>
+        <input type="text" class="form-control" id="nom" placeholder="Entrer votre nom" name="nom" [(ngModel)]="newContact.nom" required>
+  
+        <label for="email">Email </label>
+        <input type="text" class="form-control" id="email" placeholder="Entrer votre email" name="email" [(ngModel)]="newContact.email" required>
+  
+        <label for="tel">Tel</label>
+        <input type="text" class="form-control" id="tel" placeholder="Entrer votre téléphone" name="tel" [(ngModel)]="newContact.tel" required>
+  
+        <label for="sujet">Sujet</label>
+        <input type="text" class="form-control" id="sujet" placeholder="Entrer votre sujet" name="sujet" [(ngModel)]="newContact.sujet" required>
+  
+        <label for="contenu">Contenu</label>
+        <textarea class="form-control" id="contenu" placeholder="Entrer votre Message" name="contenu" [(ngModel)]="newContact.contenu" required></textarea>
+  
+      </div>
+  
+      <button id="submitButton" type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+    <hr>
+  </div>
+  
