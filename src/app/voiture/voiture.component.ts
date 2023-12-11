@@ -10,7 +10,7 @@ import { FactureService } from '../facture.service';
   styleUrls: ['./voiture.component.css']
 })
 export class VoitureComponent implements OnInit {
-  voitureArray: { id: number, couleur: string; matricule: string; modele: string; prix_location: number; imageUrl: string; date_fab: Date }[] = [];
+  voitureArray: { id: number, couleur: string; matricule: string; modele: string; prix_location: number; imageUrl: string; date_fab: Date; }[] = [];
 
   constructor(
     private dataService: VoitureService,
