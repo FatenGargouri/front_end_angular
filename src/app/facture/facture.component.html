@@ -35,6 +35,17 @@
     <p><strong>Nom:</strong> {{ getClientData()?.nom || 'N/A' }}</p>
     <!-- Ajoutez plus d'informations sur le client au besoin -->
   </div>
+  
+
+  <div class="voiture-info">
+    <h2>Voiture Information</h2>
+    <p><strong>Matricule:</strong> {{ getVoitureData()?.matricule || 'N/A' }}</p>
+    <p><strong>Modèle:</strong> {{ getVoitureData()?.modele || 'N/A' }}</p>
+    <p><strong>Date fabrication:</strong> {{ getVoitureData()?.date_fab || 'N/A' }}</p>
+    <p><strong>Couleur:</strong> {{ getVoitureData()?.couleur || 'N/A' }}</p>
+    <p><strong>Prix de location</strong> {{ getVoitureData()?.prix_location || 'N/A' }}</p>
+    <!-- Ajoutez plus d'informations sur le client au besoin -->
+  </div>
 
   <div class="reservation-info">
     <h2>Reservation Information</h2>

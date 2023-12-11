@@ -34,12 +34,30 @@ export class FactureService {
   getPaymentData() {
     return this.paymentData;
   }
-
-  setVoitureData(data :any){
-    this.voitureData =data;
+  setVoitureData(data: any) {
+    this.voitureData = data;
   }
+
   getVoitureData() {
     return this.voitureData;
+  }
+
+  reserveVoiture(voiture: any): void {
+    this.setVoitureData(voiture);
+  }
+
+  private selectedVoiture: any;
+
+  setSelectedVoiture(voiture: any): void {
+    this.selectedVoiture = voiture;
+  }
+
+  getSelectedVoiture(): any {
+    return this.selectedVoiture;
+  }
+
+  clearSelectedVoiture(): void {
+    this.selectedVoiture = null;
   }
 
 }

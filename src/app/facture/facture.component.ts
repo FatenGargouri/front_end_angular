@@ -48,4 +48,10 @@ export class FactureComponent implements OnInit {
   getPaymentData() {
     return this.factureService.getPaymentData();
   }
+  
+  getVoitureData(){
+    return this.factureService.getVoitureData();
+  }
+
+ 
 }

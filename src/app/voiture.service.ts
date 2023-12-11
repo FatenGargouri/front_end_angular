@@ -7,6 +7,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class VoitureService {
+  
 
   private baseUrl = 'http://localhost:8087'; // Remplacez par l'URL de votre backend Spring Boot
 
@@ -24,6 +25,12 @@ export class VoitureService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<any>(`${this.baseUrl}/api/voiture`, voiture, { headers });
   }
+
+  reserveVoiture(voiture: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/api/voiture/reserver-voiture`, voiture);
+  }
+
+ 
 
   // Ajoutez d'autres méthodes selon vos besoins
 
