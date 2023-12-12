@@ -75,7 +75,7 @@
                     <p class="card-text">Année de fabrication: {{ voiture.date_fab }}</p>
                     <p class="card-text">Prix de location: {{ voiture.prix_location }}</p>
                     <!-- Ajoutez d'autres détails de la voiture si nécessaire -->
-                    <a href="/reservation" class="btn btn-primary">Réserver</a>
+                    <a  (click)="reserverVoiture(voiture)" class="btn btn-primary">Réserver</a>
                 </div>
             </div>
         </div>
