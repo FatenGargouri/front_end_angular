@@ -8,3 +8,9 @@
 .nav-item a[href="/reservations"] {
     color: blue; /* Couleur du texte pour les liens spécifiques */
 }
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
