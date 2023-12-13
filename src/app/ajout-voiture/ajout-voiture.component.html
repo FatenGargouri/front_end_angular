@@ -1,0 +1,36 @@
+<!-- ajout-voiture.component.html -->
+<h2>Ajouter une nouvelle voiture</h2>
+<form (ngSubmit)="onSubmit()">
+  <label>Couleur: <input [(ngModel)]="newVoiture.couleur" name="couleur" required></label><br>
+  <label>Matricule: <input [(ngModel)]="newVoiture.matricule" name="matricule" required></label><br>
+  <label>Modèle: <input [(ngModel)]="newVoiture.modele" name="modele" required></label><br>
+  <label>Prix de location: <input [(ngModel)]="newVoiture.prix_location" name="prix_location" type="number" required></label><br>
+  <label>Image URL: <input [(ngModel)]="newVoiture.imageUrl" name="imageUrl" required></label><br>
+  <label>Date de fabrication: <input [(ngModel)]="newVoiture.date_fab" name="date_fab" type="date" required></label><br>
+  <label>Marque:
+    <select [(ngModel)]="newVoiture.marque.id" name="marque" required>
+      <option *ngFor="let marque of marques" [value]="marque.id">{{ marque.nomMar }}</option>
+    </select>
+  </label><br>
+
+  <button type="submit">Ajouter</button>
+</form>
+
+<div class="container">
+  <h1>Nos Voitures</h1>
+  <div class="d-flex flex-wrap">
+    <!-- Utilisation de la directive *ngFor pour itérer sur les voitures -->
+    <div *ngFor="let voiture of voitureArray; let i = index" class="card" style="width: 20rem;">
+      <img [src]="voiture.imageUrl" class="card-img-top" alt="Image de la voiture">
+      <div class="card-body">
+        <h4 class="card-text" title="Marque">Modèle: {{ voiture.modele }}</h4>
+        <p class="card-text">Marque: {{ voiture.marque?.nomMar || 'Non spécifiée' }}</p>
+        <p class="card-text">Couleur: {{ voiture.couleur }}</p>
+        <p class="card-text">Année de fabrication: {{ voiture.date_fab }}</p>
+        <p class="card-text">Prix de location: {{ voiture.prix_location }}</p>
+        <button (click)="onUpdate(i)" class="btn btn-primary">Update</button>
+        <button (click)="onDelete(i)" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

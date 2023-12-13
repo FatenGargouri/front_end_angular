@@ -10,7 +10,10 @@ import { FactureService } from '../facture.service';
   styleUrls: ['./voiture.component.css']
 })
 export class VoitureComponent implements OnInit {
-  voitureArray: { id: number, couleur: string; matricule: string; modele: string; prix_location: number; imageUrl: string; date_fab: Date; }[] = [];
+  voitureArray: { id: number, couleur: string; matricule: string; modele: string; prix_location: number; imageUrl: string; date_fab: Date; marque: {
+    nomMar: string;
+    // Ajoutez d'autres propriétés de la marque si nécessaire
+  };}[] = [];
 
   constructor(
     private dataService: VoitureService,
@@ -50,7 +53,7 @@ export class VoitureComponent implements OnInit {
             this.factureService.reserveVoiture(data);
 
             // Naviguez vers le composant suivant (reservation)
-            this.router.navigate(['/reservation']);
+            this.router.navigate(['/client']);
           },
           (error) => {
             console.error('Error reserving voiture:', error);

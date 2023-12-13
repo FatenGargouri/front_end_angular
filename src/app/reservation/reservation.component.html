@@ -34,11 +34,37 @@
 
             <label for="date_fin">Date de fin</label>
             <input type="datetime-local" class="form-control" id="date_fin" name="date_fin" [(ngModel)]="newReservation.date_fin" required>
+
+            
         </div>
         <button id="submitButton" type="submit" class="btn btn-primary">Préserver</button>
     </form>
     <hr>
 </div>
+
+<!--<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope ="col"></th>
+        <th scope="col">Date début réservation</th>
+        <th scope="col">Date fin réservation</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of reservationArray; index as i">
+        <td>{{t.id}}</td>
+        <td>{{ t.clientData?.nom || 'N/A' }}</td>
+        <td>{{ t.date_debut }}</td>
+        <td>{{ t.date_fin }}</td>
+        
+        <td><button class="btn btn-warning btn-sm" (click)="onUpdate(i)">Update</button></td>
+        <td><button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>-->
 <footer class="footer">
     <p>&copy; 2023 Agence de location de voitures AutoCar</p>
     <p>Contactez-nous : info@locationvoitures.com</p>

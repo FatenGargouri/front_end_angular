@@ -17,6 +17,7 @@ import { AgenceComponent } from './agence/agence.component';
 import { FactureComponent } from './facture/facture.component';
 import { landingComponent } from './landing/landing.component';
 import { VoitureComponent } from './voiture/voiture.component';
+import { AjoutVoitureComponent } from './ajout-voiture/ajout-voiture.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { VoitureComponent } from './voiture/voiture.component';
     FactureComponent,
     landingComponent,
     VoitureComponent,
+    AjoutVoitureComponent,
     
    
   ],

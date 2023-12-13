@@ -27,6 +27,7 @@ export class FactureService {
     return this.clientData;
   }
 
+
   setPaymentData(data: any) {
     this.paymentData = data;
   }

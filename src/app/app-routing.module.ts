@@ -8,6 +8,7 @@ import { AgenceComponent } from './agence/agence.component';
 import { FactureComponent } from './facture/facture.component';
 import { landingComponent } from './landing/landing.component';
 import { VoitureComponent } from './voiture/voiture.component';
+import { AjoutVoitureComponent } from './ajout-voiture/ajout-voiture.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path :'agence',component : AgenceComponent},
   {path : 'facture',component : FactureComponent},
   { path: '', component: landingComponent } ,
-  {path : 'voiture' ,component :VoitureComponent}
+  {path : 'voiture' ,component :VoitureComponent},
+  {path :'ajouter',component :AjoutVoitureComponent}
 ];
 
 @NgModule({

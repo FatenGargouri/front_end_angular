@@ -7,6 +7,17 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class VoitureService {
+  deleteData(id: number): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.delete<any>(`${this.baseUrl}/api/voiture/${id}`, { headers });
+  }
+  
+  
+
+ ajouterVoiture(nouvelleVoiture: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(`${this.baseUrl}/api/voiture`, nouvelleVoiture, { headers });
+  }
   
 
   private baseUrl = 'http://localhost:8087'; // Remplacez par l'URL de votre backend Spring Boot
@@ -28,6 +39,10 @@ export class VoitureService {
 
   reserveVoiture(voiture: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/api/voiture/reserver-voiture`, voiture);
+  }
+
+  getAllMarques(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/api/marque`);
   }
 
  

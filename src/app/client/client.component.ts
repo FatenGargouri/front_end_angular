@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ClientService } from '../client.service';
 import { Router } from '@angular/router';
-import { FactureService } from '../facture.service'; // Assurez-vous que le chemin est correct
+import { FactureService } from '../facture.service'; 
+import {ReservationService} from '../reservation.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class ClientComponent implements OnInit {
 
   constructor(
     private dataService: ClientService,
-    private factureService: FactureService, // Injectez le service FactureService
+    private factureService: FactureService, 
+    private reservationService: ReservationService,// Injectez le service FactureService
     private router: Router
   ) { }
 
@@ -32,12 +34,13 @@ export class ClientComponent implements OnInit {
         console.log('Server response:', data);
 
         if (Array.isArray(data) && data.length > 0) {
-          this.clientArray = data.map((client: { id: number, nom: string; email: string; adresse: string; tel: string  }) => ({
+          this.clientArray = data.map((client: { id: number, nom: string; email: string; adresse: string; tel: string  ;}) => ({
             id: client.id,
             nom: client.nom,
             email: client.email ,
             adresse: client.adresse,
             tel: client.tel,
+            
           }));
         } else {
           console.warn('Data is not an array or is empty:', data);
@@ -58,8 +61,9 @@ export class ClientComponent implements OnInit {
         // Enregistrez les données du client dans le service FactureService
         this.factureService.setClientData(response);
         
+        
         // Naviguez vers le composant suivant (paiement)
-        this.router.navigate(['/client/paiement']);
+        this.router.navigate(['/reservation'], { state: { clientId: response.id } });
       },
       error => {
         console.error('Error saving data:', error);
