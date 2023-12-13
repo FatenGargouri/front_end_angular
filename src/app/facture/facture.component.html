@@ -29,7 +29,7 @@
 
 <div #htmlData class="invoice">
   <div class="invoice-header">
-    <img src="assets/logo.png" alt="Logo" class="logo">
+    
   
     <h1>Facture</h1>
     <p>Date de facture: {{ todayDate | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
@@ -37,6 +37,7 @@
   
 
   <div class="client-info">
+    <img src="assets/logo.png" alt="Logo" class="logo">
     <h2>Client Information</h2>
     <p><strong>Nom:</strong> {{ getClientData()?.nom || 'N/A' }}</p>
     <!-- Ajoutez plus d'informations sur le client au besoin -->
