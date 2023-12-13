@@ -20,6 +20,8 @@ import { VoitureComponent } from './voiture/voiture.component';
 import { AjoutVoitureComponent } from './ajout-voiture/ajout-voiture.component';
 import { ListeReservationsComponent } from './liste-reservations/liste-reservations.component';
 import { AjoutClientComponent } from './ajout-client/ajout-client.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { AjoutClientComponent } from './ajout-client/ajout-client.component';
     AjoutVoitureComponent,
     ListeReservationsComponent,
     AjoutClientComponent,
+    AuthentificationComponent,
+    AdminComponent,
     
    
   ],

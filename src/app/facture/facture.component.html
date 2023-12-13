@@ -19,6 +19,9 @@
               <li class="nav-item">
                   <a class="nav-link" href="/contact">Contact</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Espace d'administrateur</a>
+            </li>
           </ul>
       </div>
   </div>
@@ -26,9 +29,12 @@
 
 <div #htmlData class="invoice">
   <div class="invoice-header">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+  
     <h1>Facture</h1>
     <p>Date de facture: {{ todayDate | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
   </div>
+  
 
   <div class="client-info">
     <h2>Client Information</h2>

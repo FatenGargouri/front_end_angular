@@ -20,6 +20,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Espace d'administrateur</a>
+              </li>
             </ul>
         </div>
     </div>
@@ -27,6 +30,7 @@
 <div class="container">
   <div *ngIf="agence; else agenceNotFound" class="agence-container">
     <div class="header">
+      
       <h2>{{ agence.nom }}</h2>
     </div>
     <div class="content">
