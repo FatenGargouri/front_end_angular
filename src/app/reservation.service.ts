@@ -7,6 +7,10 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class ReservationService {
+  ajouterReservation(newReservation: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/api/reservation`, newReservation);
+    // Remplacez "/ajouterReservation" par l'URL de votre endpoint pour ajouter une réservation
+  }
 
   private baseUrl = 'http://localhost:8087'; // Remplacez par l'URL de votre backend Spring Boot
 
@@ -47,5 +51,13 @@ export class ReservationService {
 
   deleteData(id: number): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/api/reservation/delete/${id}`);
+  }
+
+  getAllClients(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/api/client`);
+  }
+
+  getAllVoitures(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/api/voiture`);
   }
 }

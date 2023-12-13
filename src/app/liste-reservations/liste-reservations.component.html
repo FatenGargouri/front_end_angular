@@ -1,0 +1,45 @@
+<!-- liste-reservations.component.html -->
+
+<h2>Ajouter une nouvelle réservation</h2>
+<form>
+  <label>Client:
+    <select [(ngModel)]="newReservation.client.id" name="client" required>
+      <option *ngFor="let client of clients" [value]="client.id">{{ client.nom }}</option>
+    </select>
+  </label><br>
+  <label>Voiture:
+    <select [(ngModel)]="newReservation.voiture.id" name="voiture" required>
+      <option *ngFor="let voiture of voitures" [value]="voiture.id">{{ voiture.modele }}</option>
+    </select>
+  </label><br>
+  <label>Date de début: <input [(ngModel)]="newReservation.date_debut" name="date_debut" type="datetime-local" required></label><br>
+  <label>Date de fin: <input [(ngModel)]="newReservation.date_fin" name="date_fin" type="datetime-local" required></label><br>
+
+  <button type="button" (click)="ajouterReservation()">Ajouter</button>
+</form>
+
+<h2>Liste des Réservations</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Modèle de voiture</th>
+      <th>Date de début</th>
+      <th>Date de fin</th>
+      <!-- Ajoutez d'autres en-têtes de colonne selon vos besoins -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reservation of reservations">
+      <td>
+        {{ reservation.client?.nom || 'N/A' }}
+      </td>
+      <td>
+        {{ reservation.voiture?.modele || 'N/A' }}
+      </td>
+      <td>{{ reservation.date_debut }}</td>
+      <td>{{ reservation.date_fin }}</td>
+      <!-- Ajoutez d'autres cellules de données selon vos besoins -->
+    </tr>
+  </tbody>
+</table>

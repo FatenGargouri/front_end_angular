@@ -65,10 +65,8 @@ export class ReservationComponent implements OnInit {
     this.newReservation.date_fin = new Date(formattedDateFin);
     
     // Assurez-vous que this.newReservation.clientData contient les données du client
-    const clientData = this.factureService.getClientData();
+    
 
-    if (clientData) {
-      this.newReservation.clientData = clientData;
 
       this.dataService.postData(this.newReservation).subscribe(
         response => {
@@ -84,7 +82,7 @@ export class ReservationComponent implements OnInit {
         });
 
       this.resetForm();
-    }
+    
   }
 
   private resetForm() {

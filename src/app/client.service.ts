@@ -25,6 +25,11 @@ export class ClientService {
     return this.http.post<any>(`${this.baseUrl}/api/client`, client, { headers });
   }
 
+ 
+  deleteData(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/api/client/delete/${id}`);
+  }
+
   
   
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VoitureService } from '../voiture.service';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-ajout-voiture',
@@ -34,6 +35,15 @@ export class AjoutVoitureComponent implements OnInit {
   }
 
   onSubmit() {
+
+    // Utilisez Moment.js pour formater les dates
+   // Utilisez Moment.js pour formater les dates
+   const formattedDateFab = moment(this.newVoiture.date_fab).format('YYYY-MM-DDTHH:mm:ss.SSSZ');
+
+   // Convertissez les chaînes formatées en objets Date
+   this.newVoiture.date_fab = new Date(formattedDateFab);
+   
+    // Assurez-vous que this.newReservation.clientData contient les données du client
     this.dataService.ajouterVoiture(this.newVoiture).subscribe(
       (data: any) => {
         console.log('Server response (Ajout Voiture):', data);
